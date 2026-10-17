@@ -1,0 +1,42 @@
+:root {
+  --bg: #f7f7f9; --card: #fff; --border: #e7e7ec; --text: #17181c; --text-2: #5c5e68; --text-3: #8d8f99;
+  --accent: #4f5ff0; --accent-hover: #4352e0; --ok: #1a9e64; --ok-soft: rgba(26,158,100,.1); --warn-soft: rgba(183,121,31,.12); --warn: #b7791f;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f1012; --card: #16171a; --border: #26282d; --text: #ededf0; --text-2: #a4a6af; --text-3: #6e707a;
+    --accent: #6c7bff; --accent-hover: #7d8bff; --ok: #3ccf8e; --ok-soft: rgba(60,207,142,.14); --warn: #f2b14c; --warn-soft: rgba(242,177,76,.14); color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.6 "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+main { max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; }
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+header img { border-radius: 10px; }
+h1 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
+.sub { margin: 2px 0 0; color: var(--text-2); }
+#ver { color: var(--text-3); font-size: 12px; margin-left: 4px; }
+section { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin-bottom: 16px; }
+h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font-size: 15px; letter-spacing: -.01em; }
+p { margin: 0 0 10px; color: var(--text-2); }
+.muted { color: var(--text-3); font-size: 13px; }
+.steps { margin: 0; padding-left: 20px; color: var(--text-2); }
+.steps li { margin: 6px 0; padding-left: 4px; }
+.steps b { color: var(--text); font-weight: 600; margin-right: 4px; }
+.plain { margin: 0 0 10px; padding-left: 18px; color: var(--text-2); }
+.plain li { margin: 4px 0; }
+kbd { font: 500 12px/1 ui-monospace, Menlo, Consolas, monospace; padding: 3px 6px; border-radius: 5px; border: 1px solid var(--border); background: var(--bg); }
+a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+button { font: inherit; font-size: 13px; font-weight: 500; height: 34px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; }
+button:hover { background: var(--bg); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.primary:hover { background: var(--accent-hover); }
+.pill { font-size: 11.5px; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); }
+.pill.on { background: var(--ok-soft); color: var(--ok); }
+footer { text-align: center; color: var(--text-3); font-size: 12.5px; margin-top: 24px; }
+section.focus { box-shadow: 0 0 0 2px var(--accent); }
+p { text-wrap: pretty; }
+h1, h2 { text-wrap: balance; }
+.welcome { border-color: var(--accent); }
+@font-face { font-family: "Inter"; src: url("fonts/inter-latin.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+body { font-feature-settings: "cv11", "ss03"; }

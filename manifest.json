@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Uxearly Inspect",
+  "short_name": "Inspect",
+  "version": "0.5.0",
+  "description": "Inspect fonts and colors, extract a site's design system, copy CSS or React code, save images and full-page screenshots.",
+  "homepage_url": "https://uxearly.com",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage",
+    "contextMenus"
+  ],
+  "optional_permissions": [
+    "debugger"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Uxearly Inspect (Alt+Shift+I)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+I"
+      },
+      "description": "Open or close Uxearly Inspect"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

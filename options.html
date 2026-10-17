@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uxearly Inspect · Settings</title>
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/logo.svg" width="40" height="40" alt="">
+      <div>
+        <h1>Uxearly Inspect</h1>
+        <p class="sub">Fonts, colors, design tokens, code and images, in one inspector. <span id="ver"></span></p>
+      </div>
+    </header>
+
+    <section id="welcome" class="welcome" hidden>
+      <h2>You’re all set</h2>
+      <p>Open any website, then click the Uxearly Inspect icon in the toolbar or press <kbd>Alt+Shift+I</kbd>. Tip: pin the icon from the puzzle-piece menu so it’s always one click away.</p>
+    </section>
+
+    <section>
+      <h2>How to use</h2>
+      <ol class="steps">
+        <li><b>Open it</b> on any page with the toolbar icon or <kbd id="shortcut">Alt+Shift+I</kbd>. <a href="#" id="shortcuts">Change shortcut</a></li>
+        <li><b>Fonts</b> hover text for its typography, pin it to copy its CSS or HTML, and download the font files a site uses.</li>
+        <li><b>Colors</b> pick any pixel on screen or browse the page palette.</li>
+        <li><b>Measure</b> hover for sizes, padding, margins and gaps, click to pin and see distances, hover text for letter widths and gaps, drag for a ruler.</li>
+        <li><b>Tokens</b> export the page's design system as CSS variables, JSON tokens or a Tailwind theme.</li>
+        <li><b>Code</b> select an element for its CSS, or a JSX component and CSS module on React / Next.js sites.</li>
+        <li><b>Images</b> download any image, background or SVG as Original, PNG, JPG, WebP or AVIF.</li>
+        <li><b>Capture</b> save a full-page or visible-area screenshot as PNG, JPG, WebP or PDF.</li>
+        <li><b>Right-click</b> any selected text and choose “Inspect font of …” to see its font details.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Image and font access on all sites <span id="state" class="pill">Checking…</span></h2>
+      <p>Files hosted on the same site as the page work out of the box, and so do most CDNs. A few CDNs block other sites from reading
+        their files. Converting those images (PNG, JPG, WebP, AVIF), or listing fonts from stylesheets hosted there, needs permission to read them.
+        Downloading an original image never needs it.</p>
+      <p class="muted">When granted, the extension still only reads a file when you open the Images or Fonts tab, download, or open image details. You can turn this off at any time.</p>
+      <div class="actions">
+        <button id="grant" class="primary" hidden>Allow access on all sites</button>
+        <button id="revoke" hidden>Turn off</button>
+      </div>
+    </section>
+
+    <section id="capture">
+      <h2>High-resolution screenshots <span id="dstate" class="pill">Checking…</span></h2>
+      <p>Screen-quality captures work right away. HD (2×) and 4K captures re-render the page at a higher resolution, which needs
+        Chrome’s debugging interface. While one runs, Chrome shows a “started debugging this browser” bar that closes when the capture finishes.</p>
+      <p class="muted">Used only during a capture you start, on that tab. Nothing is recorded or sent anywhere.</p>
+      <div class="actions">
+        <button id="dgrant" class="primary" hidden>Turn on HD and 4K capture</button>
+        <button id="drevoke" hidden>Turn off</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <ul class="plain">
+        <li>No analytics, tracking or accounts. Nothing you inspect is sent anywhere.</li>
+        <li>The extension runs only on a tab after you click its icon or press its shortcut.</li>
+        <li>Preferences (theme, formats, panel position) are stored locally on this device.</li>
+        <li>All code, including the AVIF encoder, ships inside the extension. Nothing is loaded from the internet.</li>
+      </ul>
+      <p class="muted">Respect copyright: only download images and assets you have the rights to use.</p>
+    </section>
+
+    <footer>Made by <a href="https://uxearly.com" target="_blank" rel="noopener noreferrer">Uxearly</a> · AVIF encoder from Squoosh (Apache-2.0) · Inter and JetBrains Mono (SIL Open Font License)</footer>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
